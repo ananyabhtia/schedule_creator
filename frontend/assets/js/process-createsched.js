@@ -177,40 +177,31 @@ document.getElementById('generate-schedule').addEventListener('click', function(
     .then(response => response.json())
     .then(file => {
         const schedule = file[0].schedule;
-        console.log(make_csv(schedule))})
+        download_csv(make_csv(schedule))})
     .catch(error => console.error('Error:', error));
 });
 
-
-/* how to make an api request to my own flask server to a route */
-/* enabling cors in flask -> cross origin requests */
-/* making a POST request from frontend to flask api */
-/* GET, POST, PUT, DELETE requests */
-
-/* questions: 
-- why does http://localhost:5000/ not work but http://127.0.0.1:5000/ does, aren't they the same address in different forms?
-*/
-
 function make_csv(schedule) {
-    const days = Object.keys(schedule);
-    const slot_groups = Object.values(schedule);
-    const replacer = (key, value) => value === null ? '' : value;
-    const csv = [
-        days.join(","),
-        ...slot_groups.map(row => days.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
-    ].join('\r\n');
-    return csv;
-}
-/*
-function download_csv(data)
-const blob = new Blob([jsonData], {type:'application/json'});
-const url = URL.createObjectURL(blob);
-const link = document.createElement('a');
-link.setAttribute('href', url);
-link.setAttribute('download', 'data.json');
-link.style.visibility = 'hidden';
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
-*/
+    let csvContent = "day:,slot and student:\r";
+    for (let day in schedule) {
+        schedule[day].forEach(slot => {
+            let row = `${day},"${slot}"\n`;
+            csvContent += row;
+        });
+    };
+    return csvContent;
+};
+
+function download_csv(csvData) {
+    const blob = new Blob([csvData], {type:'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'schedule.csv');
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
+
          

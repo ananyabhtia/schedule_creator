@@ -72,7 +72,7 @@ def generate_schedule():
 
     days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
     schedule_dict = {day: [] for day in days}
-    availability_dict = {day: {} for day in days}
+    availability_dict = {day: [] for day in days}
     hours_received = {}
     for student in all_students:
         hours_received[student.name] = student.total_hours
