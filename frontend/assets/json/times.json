@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Ananya",
+        "schedule": {
+          "Monday": ["4PM-6PM", "6PM-8PM", "8PM-1030PM"],
+          "Tuesday": ["4PM-6PM", "8PM-1030PM"],
+          "Wednesday": ["4PM-6PM", "6PM-8PM", "8PM-1030PM"],
+          "Thursday": ["4PM-6PM", "6PM-8PM", "8PM-1030PM"],
+          "Friday": [],
+          "Saturday": ["12PM-2PM"],
+          "Sunday": ["12PM-2PM", "2PM-5PM"]
+    }
+  }
+]

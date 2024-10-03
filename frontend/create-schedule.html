@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>salad</title>
+        <link rel="stylesheet" href="./assets/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d8769fd04c.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <main id="schedule-container" class="page-container">
+            <nav id="sched-nav">
+                <img src="assets/images/salad-logo-01.svg" alt="salad logo" id="top-logo">
+                <h1 id="create-schedule-heading">create a schedule</h1>
+            </nav>
+            <article id="information">
+                <i id="question-icon" class="fa-regular fa-circle-question"></i>
+                <p id="question-paragraph">Begin by adding your employees using the employee menu on the left and inputting their availability by clicking on the slots in the calendar to your right. To add an employee, click on the 'add' button. When you're done adding employees, click 'Generate Schedule' and a complete employee schedule will be created for you. If you want to save your work and come back later, click 'Save Draft'.</p>
+            </article>
+            <section id="employee-container">
+                <div id="employee-heading-container">
+                    <h1 id="employees-heading">employees</h1>
+                    <button id="add-employee" class="gray-buttons" aria-label="add employee button">add</button>
+                    <button id="edit-employee" class="gray-buttons" aria-label="edit employee button">edit</button>
+                </div>
+                <section id="employee-box">
+                </section>
+            </section>
+            <button id="del-button" class="hidden">delete</button>
+            <button id="bk-button" class="hidden">back</button>
+            <section id="availability-main">
+            </section>
+            <template id="availability-template">
+                <section class="availability-container">
+                    <header id="availability-header">
+                        <div id="sunday-box" class="day-boxes"><h1 id="sunday-header" class="header-days">sunday</h1></div>
+                        <div class="day-boxes"><h1 id="monday-header" class="header-days">monday</h1></div>
+                        <div class="day-boxes"><h1 id="tuesday-header" class="header-days">tuesday</h1></div>
+                        <div class="day-boxes"><h1 id="wednesday-header" class="header-days">wednesday</h1></div>
+                        <div class="day-boxes"><h1 id="thursday-header" class="header-days">thursday</h1></div>
+                        <div class="day-boxes"><h1 id="friday-header" class="header-days">friday</h1></div>
+                        <div id="saturday-box" class="day-boxes"><h1 id="saturday-header" class="header-days">saturday</h1></div>
+                    </header>
+                    <section id="availability-box">
+                        <div id="Sunday" class="days">
+                            <button id="Sunday-10:00-12:00" class="slots" aria-label="10:00AM-12:00PM slot">10:00AM-12:00PM</button>
+                            <button id="Sunday-12:00-14:00" class="slots" aria-label="12:00PM-2:00PM slot">12:00PM-2:00PM</button>
+                            <button id="Sunday-14:00-17:00" class="slots" aria-label="2:00PM-5:00PM slot">2:00PM-5:00PM</button>
+                            <button id="Sunday-5PM-1030PM" class="empty-slots" aria-label="empty slot, not clickable"></button>
+                        </div>
+                        <div id="Monday" class="days">
+                            <button id="Monday-10:00-12:00" class="slots" aria-label="10:00AM-12:00PM slot">10:00AM-12:00PM</button>
+                            <button id="Monday-12:00-14:00" class="slots" aria-label="12:00PM-2:00PM slot">12:00PM-2:00PM</button>
+                            <button id="Monday-14:00-16:00" class="slots" aria-label="2:00PM-4:00PM slot">2:00PM-4:00PM</button>
+                            <button id="Monday-16:00-18:00" class="slots" aria-label="4:00PM-6:00PM slot">4:00PM-6:00PM</button>
+                            <button id="Monday-18:00-20:00" class="slots" aria-label="6:00PM-8:00PM slot">6:00PM-8:00PM</button>
+                            <button id="Monday-20:00-22:30" class="slots" aria-label="8:00PM-10:30PM slot">8:00PM-10:30PM</button>
+                        </div>
+                        <div id="Tuesday" class="days">
+                            <button id="Tuesday-10:00-12:00" class="slots" aria-label="10:00AM-12:00PM slot">10:00AM-12:00PM</button>
+                            <button id="Tuesday-12:00-14:00" class="slots" aria-label="12:00PM-2:00PM slot">12:00PM-2:00PM</button>
+                            <button id="Tuesday-14:00-16:00" class="slots" aria-label="2:00PM-4:00PM slot">2:00PM-4:00PM</button>
+                            <button id="Tuesday-16:00-18:00" class="slots" aria-label="4:00PM-6:00PM slot">4:00PM-6:00PM</button>
+                            <button id="Tuesday-18:00-20:00" class="slots" aria-label="6:00PM-8:00PM slot">6:00PM-8:00PM</button>
+                            <button id="Tuesday-20:00-22:30" class="slots" aria-label="8:00PM-10:30PM slot">8:00PM-10:30PM</button>
+                        </div>
+                        <div id="Wednesday" class="days">
+                            <button id="Wednesday-10:00-12:00" class="slots" aria-label="10:00AM-12:00PM slot">10:00AM-12:00PM</button>
+                            <button id="Wednesday-12:00-14:00" class="slots" aria-label="12:00PM-2:00PM slot">12:00PM-2:00PM</button>
+                            <button id="Wednesday-14:00-16:00" class="slots" aria-label="2:00PM-4:00PM slot">2:00PM-4:00PM</button>
+                            <button id="Wednesday-16:00-18:00" class="slots" aria-label="4:00PM-6:00PM slot">4:00PM-6:00PM</button>
+                            <button id="Wednesday-18:00-20:00" class="slots" aria-label="6:00PM-8:00PM slot">6:00PM-8:00PM</button>
+                            <button id="Wednesday-20:00-22:30" class="slots" aria-label="8:00PM-10:30PM slot">8:00PM-10:30PM</button>
+                        </div>
+                        <div id="Thursday" class="days">
+                            <button id="Thursday-10:00-12:00" class="slots" aria-label="10:00AM-12:00PM slot">10:00AM-12:00PM</button>
+                            <button id="Thursday-12:00-14:00" class="slots" aria-label="12:00PM-2:00PM slot">12:00PM-2:00PM</button>
+                            <button id="Thursday-14:00-16:00" class="slots" aria-label="2:00PM-4:00PM slot">2:00PM-4:00PM</button>
+                            <button id="Thursday-16:00-18:00" class="slots" aria-label="4:00PM-6:00PM slot">4:00PM-6:00PM</button>
+                            <button id="Thursday-18:00-20:00" class="slots" aria-label="6:00PM-8:00PM slot">6:00PM-8:00PM</button>
+                            <button id="Thursday-20:00-22:30" class="slots" aria-label="8:00PM-10:30PM slot">8:00PM-10:30PM</button>
+                        </div>
+                        <div id="Friday" class="days">
+                            <button id="Friday-10:00-12:00" class="slots" aria-label="10:00AM-12:00PM slot">10:00AM-12:00PM</button>
+                            <button id="Friday-12:00-14:00" class="slots" aria-label="12:00PM-2:00PM slot">12:00PM-2:00PM</button>
+                            <button id="Friday-14:00-17:00" class="slots" aria-label="2:00PM-5:00PM slot">2:00PM-5:00PM</button>
+                            <button id="Friday-5PM-1030PM" class="empty-slots" aria-label="empty slot, not clickable"></button>
+                        </div>
+                        <div id="Saturday" class="days">
+                            <button id="Saturday-10:00-12:00" class="slots" aria-label="10:00AM-12:00PM slot">10:00AM-12:00PM</button>
+                            <button id="Saturday-12:00-14:00" class="slots" aria-label="12:00PM-2:00PM slot">12:00PM-2:00PM</button>
+                            <button id="Saturday-14:00-17:00" class="slots" aria-label="2:00PM-5:00PM slot">2:00PM-5:00PM</button>
+                            <button id="Saturday-5PM-1030PM" class="empty-slots" aria-label="empty slot, not clickable"></button>
+                        </div>
+                    </section>
+                </section>
+            </template>
+            <footer id="foot">
+                <button id="generate-schedule" class="gray-buttons">generate schedule</button>
+            </footer>
+        </main>
+        <script src="./assets/js/process-createsched.js" type="application/javascript"></script>
+    </body>
+</html> 
