@@ -2,10 +2,9 @@
   "name": "project6",
   "version": "1.0.0",
   "main": "app.js",
-  "start": "node app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm build"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
