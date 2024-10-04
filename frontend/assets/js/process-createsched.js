@@ -177,7 +177,8 @@ document.getElementById('generate-schedule').addEventListener('click', function(
     .then(response => response.json())
     .then(file => {
         const schedule = file[0].schedule;
-        download_csv(make_csv(schedule))})
+        download_csv(make_csv(schedule));
+    })
     .catch(error => console.error('Error:', error));
 });
 
