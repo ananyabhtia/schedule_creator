@@ -167,7 +167,7 @@ document.getElementById('generate-schedule').addEventListener('click', function(
         });
     });
     const jsonData = JSON.stringify(data);
-    fetch("http://0.0.0.0:5000/", {
+    fetch("http://147.182.189.222:5000", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
